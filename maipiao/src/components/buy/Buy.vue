@@ -21,9 +21,9 @@
 					<div class="list">
 						<ul class="resp-tabs-list hor_1">
 							<li @click="search()">查询</li>
-							<li>购买</li>
+							<li @click="gobuy()">购买</li>
 							<li @click="mine()">我的订单</li>
-							<li>关于我们</li>
+							<li @click="gywom()">关于我们</li>
 							<li id="login" @click="gologin()">
 								<span>登录</span>/
 								<span>注册</span>
@@ -257,6 +257,9 @@ export default {
 			}
 
 		},
+		gobuy(start, end) {
+            router.push({ name: 'buy', params: { start: start, end: end } })
+        },
 		gotobuy() {
 			router.push({ name: 'mine' });
 		},

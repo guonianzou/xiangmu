@@ -19,14 +19,15 @@
                 <div>
                     <div class="list">
                         <ul class="resp-tabs-list hor_1">
-                            <li @click="search()">查询</li>
-                            <li @click="gobuy()">购买</li>
-                            <li>我的订单</li>
-                            <li>关于我们</li>
-                            <li id="login" @click="gologin()">
-                                <span>登录</span>/
-                                <span>注册</span>
-                            </li>
+                                <li @click="refund()">查询</li>
+                                <li @click="gobuy()">购买</li>
+                                <li @click="mine()">我的订单</li>
+                                <li @click="gywom()">关于我们</li>
+
+                                <li id="login" @click="gologin()">
+                                    <span>登录</span>/
+                                    <span>注册</span>
+                                </li>
                         </ul>
                     </div>
                 </div>
@@ -147,21 +148,23 @@ export default {
         'v-foot': foot
     },
     methods: {
+        gobuy(start, end) {
+            router.push({ name: 'buy', params: { start: start, end: end } })
+        },
         refund() {
-            if (confirm("你确定要退票吗？")) {
-                window.localStorage.clear('train_no', 'start_station', 'end_station', 'end_time', 'start_time', 'run_time')
-                this.myticket = true
-                this.gobuy = false
-            }
+            router.push({ name: 'Homepage' });
         },
         change() {
             router.push({ name: 'change' });
         },
-        search(){
-            router.push({ name: 'Homepage' });
+        mine() {
+            router.push({ name: 'mine' });
         },
-        gologin(){
+        gologin() {
             router.push({ name: 'login' })
+        },
+        gywom(){
+            router.push({name:'Gywom'})
         }
     }
 }

@@ -6,6 +6,7 @@ import Refund from '@/components/refund/Refund'
 import Change from '@/components/change/Change'
 import Mine from '@/components/mine/Mine'
 import Login from '@/components/login/Login'
+import Gywom from '@/components/homepage/Gywom'
 
 Vue.use(Router)
 
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'Homepage',
       component: Homepage
+    },
+    {
+      path: '/Gywom',
+      name: 'Gywom',
+      component: Gywom
     },
     {
       path:'/buy/:start/:end',

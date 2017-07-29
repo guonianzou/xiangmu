@@ -11,7 +11,8 @@
                                 <li>查询</li>
                                 <li @click="gobuy()">购买</li>
                                 <li @click="mine()">我的订单</li>
-                                <li>关于我们</li>
+                                <li @click="gywom()">关于我们</li>
+
                                 <li id="login" @click="gologin()">
                                     <span>登录</span>/
                                     <span>注册</span>
@@ -110,6 +111,9 @@ export default {
         },
         gologin() {
             router.push({ name: 'login' })
+        },
+        gywom(){
+            router.push({name:'Gywom'})
         }
     }
 }
